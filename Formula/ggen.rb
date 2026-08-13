@@ -1,11 +1,11 @@
 class Ggen < Formula
   desc "Language-agnostic, graph-aware generator for reproducible projections"
   homepage "https://github.com/seanchatmangpt/ggen"
-  version "26.8.14"
+  version "26.8.15"
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/seanchatmangpt/ggen/releases/download/v26.8.14/ggen-x86_64-apple-darwin.tar.gz"
-      sha256 "30f6a173e9d969c536485b72c177c33737a2d5348cf5155d6cab23a36bb48573"
+      url "https://github.com/seanchatmangpt/ggen/releases/download/v26.8.15/ggen-x86_64-apple-darwin.tar.gz"
+      sha256 "c122097bdb536368566c1a669bd51bd19471ba4ad3d21a499137f10cec7a2acd"
     else
       url "https://github.com/seanchatmangpt/ggen/releases/download/v26.8.8/ggen-x86_64-apple-darwin.tar.gz"
       sha256 "a4304371ce787e7bfe479fdba050960cdb8761fc9ca3d272da6bd7e64af08570"
