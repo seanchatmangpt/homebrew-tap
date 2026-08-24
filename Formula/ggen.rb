@@ -1,7 +1,6 @@
 class Ggen < Formula
   desc "Language-agnostic, graph-aware generator for reproducible projections"
   homepage "https://github.com/seanchatmangpt/ggen"
-  version "26.8.19"
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/seanchatmangpt/ggen/releases/download/v26.8.19/ggen-x86_64-apple-darwin.tar.gz"
