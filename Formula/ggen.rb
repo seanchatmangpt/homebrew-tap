@@ -1,28 +1,32 @@
 class Ggen < Formula
   desc "Language-agnostic, graph-aware generator for reproducible projections"
   homepage "https://github.com/seanchatmangpt/ggen"
-  version "26.9.20"
+  version "26.9.21"
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/seanchatmangpt/ggen/releases/download/v26.9.20/ggen-aarch64-apple-darwin.tar.gz"
-      sha256 "4e59dd05f56a42506a11d7f51bd00d8ce105c48d6cd49f226f19e9c83b6b7bfb"
+      url "https://github.com/seanchatmangpt/ggen/releases/download/v26.9.21/ggen-aarch64-apple-darwin.tar.gz"
+      sha256 "0cbaaf6b9b780d9561d3f1ff9a607c8cd5cab75607b752e36241284297e3b955"
     else
-      url "https://github.com/seanchatmangpt/ggen/releases/download/v26.9.20/ggen-x86_64-apple-darwin.tar.gz"
-      sha256 "ea934beee339d0255d1d651261e937d83f55305f93764b4bc102bc1ee0293f36"
+      url "https://github.com/seanchatmangpt/ggen/releases/download/v26.9.21/ggen-x86_64-apple-darwin.tar.gz"
+      sha256 "5006dc8a6438d55e72585f189da6192dfb0367638ea58cd54878b19b0105576c"
     end
   end
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/seanchatmangpt/ggen/releases/download/v26.9.20/ggen-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "fa4e24d3141229bae6d9b7ed20f9ee0ec3c26d01a6579ecde76bbcce766e43d1"
+      url "https://github.com/seanchatmangpt/ggen/releases/download/v26.9.21/ggen-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "e35abc8c05ed54f09840dd97074bf3042a6453938626a8609a396d33e4f969a6"
     else
-      url "https://github.com/seanchatmangpt/ggen/releases/download/v26.9.20/ggen-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "47cfa01cb4093daf17dd0ccaac6b1db2b3e12be33147c655a2e036f60e12fc19"
+      url "https://github.com/seanchatmangpt/ggen/releases/download/v26.9.21/ggen-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "c8fbeeb6779e2e21d08809101268bb4c031dd3a6655bf9a3cb8d300dc2351aeb"
     end
   end
   def install
     bin.install "ggen"
-    generate_completions_from_executable(bin/"ggen", "completion")
+    # No : the ggen CLI has no
+    #  subcommand (verified:  -> unrecognized
+    # subcommand), and executing the missing verb inside brew's sandbox
+    # fails the whole install. Every tap install of >=26.9.13 broke on this
+    # line; the binary pour alone is the formula's job.
   end
   test do
     assert_match "ggen", shell_output("#{bin}/ggen --version")
