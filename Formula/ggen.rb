@@ -1,23 +1,23 @@
 class Ggen < Formula
   desc "Language-agnostic, graph-aware generator for reproducible projections"
   homepage "https://github.com/seanchatmangpt/ggen"
-  version "26.9.22"
+  version "26.9.23"
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/seanchatmangpt/ggen/releases/download/v26.9.22/ggen-aarch64-apple-darwin.tar.gz"
-      sha256 "5832a30d4d3b608a02596e20aa914e482ea393a0646bba2be78ca157af156826"
+      url "https://github.com/seanchatmangpt/ggen/releases/download/v26.9.23/ggen-aarch64-apple-darwin.tar.gz"
+      sha256 "0d96a7ea8fe73cbdd1115567c3d2ac8a2f7aa6a842454753073cc412d79dfd8c"
     else
-      url "https://github.com/seanchatmangpt/ggen/releases/download/v26.9.22/ggen-x86_64-apple-darwin.tar.gz"
-      sha256 "73a47f3bbf4875f4b530d9e84260da723058d7faad70e7fc8e3e6c5523ae3674"
+      url "https://github.com/seanchatmangpt/ggen/releases/download/v26.9.23/ggen-x86_64-apple-darwin.tar.gz"
+      sha256 "7a03f5bb4a3b054fdc3d992fe4c213659a07df1268e2da250ccf76e349449c10"
     end
   end
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/seanchatmangpt/ggen/releases/download/v26.9.22/ggen-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "5d694b513db67a0586baca75aff4414b3cf0030c3c2863c37be0d637f38c3fbb"
+      url "https://github.com/seanchatmangpt/ggen/releases/download/v26.9.23/ggen-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "baba96993915c71b2ff4ef086bf77cc334ca884f66bdc588a10de092ac7e2bd5"
     else
-      url "https://github.com/seanchatmangpt/ggen/releases/download/v26.9.22/ggen-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "57a6d3f6a254c9da9d58e50329b45865b9da76435576d0a1cccf7c757e16fa39"
+      url "https://github.com/seanchatmangpt/ggen/releases/download/v26.9.23/ggen-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "6b3b64590ff612b40e1248a03b7b2dc3dcb19d2c373af74d5e64b3a0cba633af"
     end
   end
   def install
