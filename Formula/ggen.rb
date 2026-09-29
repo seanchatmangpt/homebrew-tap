@@ -22,8 +22,8 @@ class Ggen < Formula
   end
   def install
     bin.install "ggen"
-    # No generate_completions_from_executable: the ggen CLI has no
-    # completion subcommand (verified: ggen completion -> unrecognized
+    # No : the ggen CLI has no
+    #  subcommand (verified:  -> unrecognized
     # subcommand), and executing the missing verb inside brew's sandbox
     # fails the whole install. Every tap install of >=26.9.13 broke on this
     # line; the binary pour alone is the formula's job.
