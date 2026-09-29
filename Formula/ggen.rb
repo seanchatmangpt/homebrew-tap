@@ -5,25 +5,29 @@ class Ggen < Formula
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/seanchatmangpt/ggen/releases/download/v26.9.28/ggen-aarch64-apple-darwin.tar.gz"
-      sha256 "15972c7ba3ef6fd501d7db79b32aea9f77cc91ec6287c926fc11fe035015f9be"
+      sha256 "d553c4bf7318275f6d7f4e04ea0af0b37ec9c2479af648cc1035bdf2d99ca857"
     else
       url "https://github.com/seanchatmangpt/ggen/releases/download/v26.9.28/ggen-x86_64-apple-darwin.tar.gz"
-      sha256 "8df162ea452e30cc3ae38f00372ffe977e5a760869bb7866e2f061a9fb4f650d"
+      sha256 "c46d538a37cb220aef351973aea235f88e1b4f405388eaa081d13a981f7c7935"
     end
   end
   on_linux do
     if Hardware::CPU.arm?
       url "https://github.com/seanchatmangpt/ggen/releases/download/v26.9.28/ggen-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "67a99006cd11b6e2800b0b57f8e5ae91d06c903120c2a713f8b7bdc04ec030e0"
+      sha256 "223ff711217ac868ad72f2c43c2e39ef5982d15d9c704e7cbcf1d512cae7fd39"
     else
       url "https://github.com/seanchatmangpt/ggen/releases/download/v26.9.28/ggen-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "f16cd32d230c344395bdcaab2d2a81ca9529b512d74feeba2ac70ee3de33c993"
+      sha256 "47316dd090d52d3fc7f1ee8185b8fab09e4a69f1a6fd1cf8e083781e192383e6"
     end
   end
   def install
     bin.install "ggen"
     # No : the ggen CLI has no
-    #  subcommand (verified:  -> unrecognized
+    #  subcommand (verified: error: unrecognized subcommand 'completion'
+
+Usage: ggen [OPTIONS] [COMMAND]
+
+For more information, try '--help'. -> unrecognized
     # subcommand), and executing the missing verb inside brew's sandbox
     # fails the whole install. Every tap install of >=26.9.13 broke on this
     # line; the binary pour alone is the formula's job.
